@@ -1,0 +1,48 @@
+[project]
+name = "fura"
+version = "0.1.0"
+description = "FuRA: Full-Rank Adaptation of LLMs via Lossless Block Tensor-Train Factorization"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "FuRA authors" },
+]
+
+# Shared environment for the `commonsense/`, `rl/`, and `qfura_commonsense/` tracks.
+# The `vlm/` track has its own pinned environment (see vlm/pyproject.toml) and
+# the `qfura_commonsense/qdora_baseline/` sub-track has its own requirements.txt.
+dependencies = [
+    "accelerate>=0.30.0",
+    "bitsandbytes>=0.43.0",
+    "datasets>=2.18.0",
+    "math-verify>=0.5",
+    "numpy>=1.26",
+    "peft>=0.10.0",
+    "safetensors>=0.4.0",
+    "scipy>=1.11",
+    "sentencepiece>=0.2.0",
+    "tensorboard>=2.16.0",
+    "torch>=2.4.0",
+    "tqdm>=4.66.0",
+    "transformers>=4.45.0",
+    "wandb>=0.17.0",
+    "requests>=2.32.0",
+]
+
+[project.optional-dependencies]
+# vLLM is only required by the RL track for fast rollouts. Other tracks do not
+# need it. If you only run commonsense or QFuRA, you can skip this group.
+rl = [
+    "vllm>=0.6.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["fura*"]
+exclude = [
+    "commonsense*",
+    "rl*",
+    "vlm*",
+    "qfura_commonsense*",
+    "docs*",
+]

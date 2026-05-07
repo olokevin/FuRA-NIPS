@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.so
+
+# Environments
+.venv/
+.venv-*/
+venv/
+env/
+*.lock
+uv.lock
+poetry.lock
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Experiment outputs (also keep these out of any submitted archive)
+runs/
+output/
+outputs/
+checkpoints/llava-v1.5-7b-*/
+wandb/
+*.log
+*.err
+
+# Data — never bundle these; reviewers fetch them themselves per the README
+commonsense/LLM-Adapters/ft-training_set/*.json
+commonsense/LLM-Adapters/dataset/*/
+qfura_commonsense/LLM-Adapters/ft-training_set/*.json
+qfura_commonsense/LLM-Adapters/dataset/*/
+vlm/playground/data/*
+
+# But keep the TODO markers
+!commonsense/LLM-Adapters/ft-training_set/TODO_POPULATE.md
+!commonsense/LLM-Adapters/dataset/TODO_POPULATE.md
+!qfura_commonsense/LLM-Adapters/ft-training_set/TODO_POPULATE.md
+!qfura_commonsense/LLM-Adapters/dataset/TODO_POPULATE.md
+!vlm/checkpoints/TODO_POPULATE.md
+!vlm/playground/data/TODO_POPULATE.md

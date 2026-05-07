@@ -1,0 +1,22 @@
+# Dedicated environment for the QDoRA baseline.
+#
+# QDoRA needs the DoRA-patched PEFT (which exposes `use_dora=True` on
+# LoraConfig) and bitsandbytes >= 0.43 for NF4 + paged optimizer. The pin set
+# below is the same one used to produce the QDoRA numbers in the paper.
+#
+# Recommended setup:
+#     python -m venv .venv-qdora
+#     source .venv-qdora/bin/activate
+#     pip install -r requirements.txt
+
+accelerate>=0.30.0
+bitsandbytes>=0.43.0
+datasets>=2.18.0
+numpy>=1.26
+peft>=0.11.0
+safetensors>=0.4.0
+sentencepiece>=0.2.0
+torch>=2.4.0
+tqdm>=4.66.0
+transformers>=4.45.0
+wandb>=0.17.0
